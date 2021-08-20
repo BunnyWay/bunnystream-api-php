@@ -154,7 +154,7 @@ class BunnyCDNStream
         $url = $this->generateBaseUrl("/videos/" . $videoId);
         $payload = [
             "title" => $title,
-            "collection_id" => $collectionId
+            "collectionId" => $collectionId
         ];
         try {
             return json_decode($this->sendRequest($url, "POST", "application/json", json_encode($payload)), TRUE);
@@ -195,7 +195,7 @@ class BunnyCDNStream
             "title" => $title,
         ];
         if ($collectionId) {
-            $payload["collection_id"] = $collectionId;
+            $payload["collectionId"] = $collectionId;
         }
         try {
             return json_decode($this->sendRequest($url, "POST", "application/json", json_encode($payload)), TRUE);
