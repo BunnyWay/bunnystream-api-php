@@ -261,6 +261,7 @@ class BunnyCDNStream
     public function setVideoThumbnail($videoId, $thumbnailUrl)
     {
         $url = $this->generateBaseUrl("/videos/" . $videoId . "/thumbnail?thumbnailUrl=" . urlencode($thumbnailUrl));
+        $payload = [];
         try {
             return json_decode($this->sendRequest($url, "POST", "application/json", json_encode($payload)), TRUE);
         } catch (Exception $e) {
